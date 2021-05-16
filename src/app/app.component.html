@@ -1,1 +1,15 @@
-<p>Testing the git bash commands!</p>
+<div class="container">
+  <div class="col-xs-12">
+    <app-ingredient-list
+    (newIngredient)="onIngredientAdded($event)"
+    (clearIngredients)="onIngredientsCleared()"></app-ingredient-list>
+    <!-- <app-ingredient *ngFor="let ingredient of ingredients" [ingredient]="ingredient"></app-ingredient> -->
+    <a
+      class="list-group-item"
+      *ngFor="let ingredient of ingredients"
+      >
+      {{ingredient}}
+    </a>
+  </div>
+</div>
+
