@@ -3,15 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { IngredientListComponent } from './ingredient-list/ingredient-list.component';
-import { IngredientComponent } from './ingredient-list/ingredient/ingredient.component';
-
+import { HeaderComponent } from './header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
-    IngredientComponent,
-    IngredientListComponent
-  ],
+    HeaderComponent],
   imports: [
     BrowserModule,
     FormsModule

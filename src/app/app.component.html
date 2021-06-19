@@ -1,15 +1,29 @@
-<div class="container">
-  <div class="col-xs-12">
-    <app-ingredient-list
-    (newIngredient)="onIngredientAdded($event)"
-    (clearIngredients)="onIngredientsCleared()"></app-ingredient-list>
-    <!-- <app-ingredient *ngFor="let ingredient of ingredients" [ingredient]="ingredient"></app-ingredient> -->
-    <a
-      class="list-group-item"
-      *ngFor="let ingredient of ingredients"
-      >
-      {{ingredient}}
-    </a>
+<div class="navbar navbar-default">
+  <div class="navbar-text">
+    <app-header></app-header>
   </div>
 </div>
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Click the button for a new topic!</h3>
+      <button class="btn btn-primary" (click)="onButtonPressed()">{{ cardLoaded ? 'Load New Card' : 'Press To Learn!' }}</button>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-6">
+        <h4>Question:</h4><br>
+        <div *ngIf="cardLoaded">
+          <h4>{{ loadedCard.question }}</h4>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <h4>Answer:</h4><br>
+        <button class="btn btn-secondary" (click)="onShowAnswer()" *ngIf="!showAnswer && cardLoaded">Show Answer</button>
+        <h4 *ngIf="showAnswer">{{ loadedCard.answer }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

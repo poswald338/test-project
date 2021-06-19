@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { FlashCardService } from './flash-card.service';
+import { FlashCard } from './flashCard.model';
 
 @Component({
   selector: 'app-root',
@@ -7,25 +9,21 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-project';
-  @Input() ingredients = ['eggs'];
+  cardLoaded = false;
+  showAnswer = false;
+  private loadedCard: FlashCard = null
 
-  constructor() { }
+  constructor (private flashCardService: FlashCardService) {}
 
-  ngOnInit(): void {
+  onButtonPressed() {
+    debugger
+    this.cardLoaded = true;
+    this.loadedCard = this.flashCardService.getCard()
+    this.showAnswer = false;
   }
 
-  onIngredientAdded(ingredient) {
-    this.ingredients.push(ingredient);
-    return this.ingredients;
-  }
-
-
-  onIngredientsCleared() {
-    this.ingredients = [];
-  }
-
-  onShow() {
-    console.log(this.ingredients);
+  onShowAnswer() {
+    this.showAnswer = true;
   }
 
 }
