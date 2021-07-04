@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'test-project';
   cardLoaded = false;
   showAnswer = false;
-  private loadedCard: FlashCard = null
+  loadedCard: FlashCard = null
 
   constructor (private flashCardService: FlashCardService) {}
 

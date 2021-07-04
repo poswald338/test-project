@@ -3,3 +3,14 @@
 
 }
 
+.alert-box {
+  position: left;
+  /* top: 30vh;
+  left: 20vw; */
+  width: 40vw;
+  height: 40vh;
+  background: white;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
